@@ -12,7 +12,7 @@
 			"colors" => ['red', 'blue', 'green'],
 			"shapes" => ['circle', 'square', 'triangle']
 		];
-		
+
 		foreach($array3 as $key => $value){
 			
 			}

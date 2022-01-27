@@ -1,0 +1,18 @@
+ _________________
+| USER STATISTICS |  Maintain Weight   Lose weight   
+| Name            |     /             /
+| Height          |  <---------------
+| Weight          |     \            
+| Birthday        |   Gain Weight     
+|_________________|
+
+ _________________
+|    Foods        |
+| Name            |
+| Calories p. unit|
+| g. Fat          |
+| g. Protein      |
+| g. Fiber        |
+| g. carbs        |
+|_________________|
+
