@@ -8,5 +8,8 @@
                         $this->weight = $weight * 2.22046;
                         $this->height = $height / 2.54;
                 }
+                public function parentCalculateBMI(){
+                    parent::calculateBMI();
+                }
         }
 ?>
