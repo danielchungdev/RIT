@@ -1,0 +1,36 @@
+body {
+    margin-left: 35%;
+    margin-top: 10%;
+    margin-right: 35%;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.wrapper {
+    background: #FFFFFF;
+}
+
+input[type=total]{
+    width: 5%;
+}
+
+input[type=date]{
+    margin-top: 5%;
+}
+
+input[type=checkbox]{
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+
+.formTitle{
+    text-decoration: underline;
+}
+
+.astric {
+	color:red;
+	font-size:3.5em;
+	position:relative;
+	display:inline;
+	top:0.42em;
+	left:-0.20em;
+}

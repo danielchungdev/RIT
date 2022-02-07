@@ -1,0 +1,115 @@
+/*  EX02 css */
+/*  starter code */
+body{
+  background-image: url("../images/side.jpg");  
+  background-repeat: repeat-y;
+  padding: 0;
+  font-family: 'Chilanka', cursive;
+}
+
+/* Container */
+#wrapper{
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+#rightSide
+{
+   width:70%;
+   margin-left:12em;
+}
+header {
+	width:100%;
+	text-align:center;
+	font-size:1.5em;
+	margin-bottom:3em;
+	color:red;
+}
+
+/* Used to set the appearance of the squares */
+.square{
+    display: inline-block;
+    background-color: #3b5710;
+	height: 180px;
+	width: 180px;
+	border-radius: 10%;
+    margin: 2%;
+	transition: background-color 2s;    
+}
+
+/* Used for transition when user hovers over one of the 4 sqares */
+.square:hover{
+    background-color: #712e6d;
+    transition: background-color 1s ease;
+    -webkit-transition: background-color 1s ease;
+    -moz-transition: background-color 1s ease;
+    -o-transition: background-color 1s ease;
+    cursor: pointer
+}
+
+.Flower {
+  position:absolute;
+  font-size: 0.2em;
+  font-weight:bold;
+  color: #AA80CA;
+  text-shadow: none;
+  bottom:25%;
+  left:25%;
+}
+
+.Asterisk{
+  color:#7BA607;
+  font-size:120px;
+  position:relative;
+  margin:3% 0 0 6%;
+  text-shadow:3px 3px #F0F720;
+}
+
+footer {
+  width:100%;
+  position: fixed;
+  bottom:.2em;
+  font-size:.8em;
+  text-align:center;
+}
+
+
+/* Media Queries */
+@media screen and (max-width: 500px){
+    header{
+		width:70%;
+	}
+	
+	.square{
+	margin-left: 2em;
+	margin-right: 2em;
+	}
+    footer {
+      width:100%;
+      position: relative;
+      bottom:.2em;
+      font-size:.8em;
+      text-align:center;
+}
+}
+
+@media screen and (max-width: 400px){
+    body {
+        background-image: none;
+    } 
+    header{
+		width:70%;
+	}
+    #rightSide{
+        margin-left: 0;
+    }
+    footer {
+      width:100%;
+      position: relative;
+      bottom:.2em;
+      font-size:.8em;
+      text-align:center;
+    }
+}

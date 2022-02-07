@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercise 4</title>
+        <link rel="stylesheet" type="text/css" href="assets/css/EX04.css">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+        <script type="text/jscript" src="assets/js/script.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <form action="process.php" method="POST" onsubmit="validateForm()">
+                <h1 class="formTitle">Please tell us about your experience</h1>
+                <p>Enter your email <input type="text" name="email" id="email"></p>
+                <p>How many people in your group: <input type="number" name="total" id="total"></p>
+                <p id="errorMessage"></p>
+                <p>When did you visit? <input type="date" name="date" id="visitDate"><span class="astric"> * </span></p>
+                <fieldset>
+                    <legend>Favorite Place - Must Select one</legend>
+                    <p>Panama Canal <input type="checkbox" name="checkbox" id="checkbox"></p>
+                    <p>Panama Viejo <input type="checkbox" name="checkbox1" id="checkbox1"></p>
+                    <p>San Blas<input type="checkbox" name="checkbox2" id="checkbox2"></p>
+                    <p>Museo Nacional <input type="checkbox" name="checkbox" id="checkbox3"></p>
+                    <p>Decameron <input type="checkbox" name="checkbox1" id="checkbox4"></p>
+                    <p>Coronado <input type="checkbox" name="checkbox2" id="checkbox5"></p>
+                </fieldset>
+                <p>Please Rate</p>
+                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                <p><input type="submit"></p>
+            </form>
+        </div>
+    </body>
+</html>

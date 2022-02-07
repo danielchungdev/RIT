@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>Java Express-o</title>
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="icon" type="image/png" href="assets/images/favicon_brown.png">
+    </head>
+
+    <body>
+      <div id="mobile_navigation">
+        <div id="mobNav_content">
+          <div id="topNav">
+            <button class="button mobile_login">Login</button>
+          </div>
+          <div id="centerNav">
+            <a class="navButton mobNavBut" href="#Lessons">Lessons</a>
+            <a class="navButton mobNavBut" href="#contact">Contact</a>
+            <a class="navButton mobNavBut" href="#preferences">Preferences</a>
+          </div>
+          <div id="bottomNav">
+            <a class="navButton mobNavEnd" href="#settings">Settings</a>
+          </div>
+        </div>
+      </div>
+
+      <!--[landing page on page load]-->
+      <div class="modular_block">
+        <div id="landing_page">
+          <div id="logo_image">
+              <img src="assets/images/feature_logo.png"/>
+            </div>
+            <div id="start">
+              <button onclick="window.location.href = 'lesson1.php';" class="button start_button">
+                Begin to Code
+              </button>
+              <button class="button ghost_button">
+                Already started? <span onclick="window.location.href = 'login.php';" class="underline">Login</span>
+              </button>
+            </div>
+        </div>
+      </div>
+
+      <!--[java features]-->
+      <div class="modular_block">
+        <div id="java_features">
+            <div id="features_text">
+              <h2>Java Features</h2>
+              <p>
+                Java was designed to be simple to learn, understand, and write.
+                It's platform independent, meaning it can be run on just about
+                any and everything, making it the language of choice of both users
+                learning how to code and experienced developers in the field.
+              </p>
+              <p>
+                According to the <span class="underline">TIOBE Index</span>,
+                Java is the most widely used language since 2015.
+              </p>
+            </div>
+            <div id="features_image">
+              <img src="assets/images/white_mono.png"/>
+            </div>
+        </div>
+      </div>
+
+      <!--[About Us]-->
+      <div class="modular_block">
+        <div id="from_the_team">
+          <div id="slideshow_container">
+            <!--[Prev button]-->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <div id="team_slideshow">
+              <div class="slides fade">
+                <img src="assets/images/test_image_1.jpg"/>
+              </div>
+              <div class="slides fade">
+                <img src="assets/images/test_image_2.jpg"/>
+              </div>
+            </div>
+            <!--[Next button]-->
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </div>
+          <div id="team_text">
+            <h2>From the Team</h2>
+            <p>
+                Java Express-o is a website designed to teach new
+                users the basics of the Java programming language. It is
+                designed around the principles of simplicity and testing, to
+                ensure the knowledge learned is retained through end of lesson
+                quizes rather than instantly forgotten from simply reading. We,
+                at Java Express-o endeavor to teach well.
+            </p>
+            <button onclick="window.location.href = 'surveyJavaEx.PHP';" class="button contact_us">
+              Contact Us
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!--[Navigation Bar]-->
+      <div class="modular_block_navBar">
+        <div id="mainPage_navigation">
+          <a class="navButton" href="lesson1.php">Lessons</a>
+          <a class="navButton" href="surveyJavaEx.PHP">Contact</a>
+          <a class="navButton" href="reference.php">References</a>
+          <a class="navButton" href="survey.php">Comments</a>
+        </div>
+      </div>
+
+      <script src="assets/js/script.js"></script>
+    </body>
+</html>

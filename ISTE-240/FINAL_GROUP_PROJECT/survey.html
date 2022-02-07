@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Survey</title>
+	<link rel="stylesheet" type="text/css" href="asset/css/survey.css"/>
+    <script src="asset/js/survey.js"></script>
+</head>
+<body onload="dem()">
+    <div id="tempH">
+    <h1 id="temp">Temp Header</h1>
+    </div>
+    <div id="content">
+        <h1>Please Give Us Your Feedback</h1>  
+<!--        <form onsubmit="post()" name="commentForm">-->
+         <form id="cForm" name="commentForm">
+        <h2>Please Enter Your Name</h2>
+             <input id="nameIn" type="text" name="Name"/>
+            <br>
+            <h2>We would Love To Know What You Thought</h2>
+<!--            <input id="commemt"  type="text" name="comment"/>-->
+            
+            <textarea rows="5"  cols="50" form="commentForm" id="commentTa" value="com" name="Comment"></textarea>
+            
+            <br>
+            <input id="sub" onclick="post()" type="button" value="Submit"/>
+<!--             <input id="sub" type="submit" value="Submit"/>-->
+            
+            
+        </form>
+         <h2 class="comH">Comments</h2>
+        
+    </div>
+    
+   
+     
+    </body>
+</html>

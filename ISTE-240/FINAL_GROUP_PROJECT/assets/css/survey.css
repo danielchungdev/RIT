@@ -1,0 +1,80 @@
+body{
+    background-color:#363636;
+}
+h1{
+    font-size: 36px;
+   color:#98694F;
+    font-family: "Verdana";
+}
+#tempH{
+    background-color:#66462F;
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+   
+}
+#temp{
+    color:#F5EDDA;
+}
+#content{
+    position: absolute;
+    top:100px;
+    
+     
+}
+form{
+    padding-left: 25px;
+}
+h2{
+      color:#CA9E7B;
+    font-size: 24px;  
+    font-family: "Verdana";
+}
+/*This is the text input for the name field*/
+#nameIn{
+    border-radius: 30px;
+    width:400px;
+    font-size: 24px;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-family: "Verdana";
+    position: relative;
+    left:50px;
+}
+/*this is the input for the textbbox*/
+#commentTa{
+    left: 50px;
+    position: inherit;
+    border-radius: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-family: "Verdana";
+    
+    resize:none;
+/*    height:500px;*/
+    position: relative; 
+    font-size: 24px;
+    
+}
+/*This is the subbmit button*/
+#sub{
+    position: relative;
+    
+    left:100px;
+    font-size: 16px;
+    font-family: "Verdana";
+    
+    border-radius: 30px;
+}
+/*this is just for the comments heading*/
+.comH{
+    position: relative;
+    padding-left: 25px;
+}
+.commentsDiv{
+    position:relative;
+    left: 45px;
+    padding-left: 20px;
+    
+}

@@ -1,0 +1,55 @@
+1|Are you a mammal?
+2|Are you bigger than a cat?
+4|Do you have horns?
+8|Cow
+9|Do people ride you?
+18|Horse
+19|Do you squeal?
+38|Pig
+39|Do you slither on the ground?
+78|Snake
+79|Are you frequently squashed by cars and play dead a lot?
+158|Opossum
+159|Do you swim in the ocean?
+318|Whale
+319|Are you the tallest walking animal?
+638|Giraffe
+639|Do you have black and white stripes?
+1278|Zebra
+1279|Do you have a pouch?
+2558|Are you really scary when wet?
+5116|Koala
+5117|Kangaroo
+2559|Do you have claws?
+5118|Do you have a bill?
+10236|platypus
+10237|bear
+5119|Dog
+5|Do you have wings?
+10|Bat
+11|Do you have a bald tail?
+22|Rat
+23|Do you have fur on your tail?
+46|Do you eat mice?
+92|cat
+93|Squirrel
+47|Mouse
+3|Do you live underwater?
+6|Is your color gold-ish?
+12|A gold fish
+13|Do you eat people on the Discovery channel?
+26|Do you have several rows of teeth?
+52|Shark
+53|Killer Whale
+27|Do you have fins?
+54|Trout
+55|Sea Cucumber
+7|Do you live underground
+14|Do you eat my lawn?
+28|Grub
+29|Worm
+15|Do you live in the cold?
+30|Penguin
+31|Are you cold blooded?
+62|Lizard
+63|Robin
