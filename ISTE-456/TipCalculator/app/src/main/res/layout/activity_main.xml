@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/billTotal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="213dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="631dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="265dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="50dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="419dp" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/leftColumn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="end"
+        app:constraint_referenced_ids="customer,tip,bill,total"
+        tools:layout_editor_absoluteX="411dp" />
+
+    <TextView
+        android:id="@+id/tip"
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        android:text="Tip"
+        app:layout_constraintBottom_toTopOf="@+id/total"
+        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        tools:layout_editor_absoluteX="58dp" />
+
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total"
+        app:layout_constraintBottom_toTopOf="@+id/customer"
+        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        tools:layout_editor_absoluteX="56dp" />
+
+    <TextView
+        android:id="@+id/customer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Customer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        app:layout_constraintVertical_bias="0.309"
+        tools:layout_editor_absoluteX="30dp" />
+
+    <TextView
+        android:id="@+id/bill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bill total"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.112"
+        tools:layout_editor_absoluteX="37dp" />
+
+    <EditText
+        android:id="@+id/editTextNumberDecimal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/seekBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.854"
+        app:layout_constraintStart_toEndOf="@id/leftColumn"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.794" />
+
+    <EditText
+        android:id="@+id/editTextNumberDecimal4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.872"
+        app:layout_constraintStart_toEndOf="@id/leftColumn"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal3"
+        app:layout_constraintVertical_bias="0.099" />
+
+    <EditText
+        android:id="@+id/editTextNumberDecimal3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.854"
+        app:layout_constraintStart_toEndOf="@id/leftColumn"
+        app:layout_constraintTop_toBottomOf="@id/guideline6" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="212dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="184dp"
+        android:layout_marginBottom="4dp"
+        android:max="100"
+        android:progress="3"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNumberDecimal3"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

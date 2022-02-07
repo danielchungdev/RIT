@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Hello World</string>
+    <string name="Hello_Word_Text">Hello Daniel</string>
+    <string name="random_heading">This is a random number between 0 and %1d.</string>
+</resources>

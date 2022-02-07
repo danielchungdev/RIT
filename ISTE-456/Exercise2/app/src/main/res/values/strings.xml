@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Exercise2</string>
+    <string name="loan_tittle">Loan Amount:</string>
+    <string name="interest_title">Interest Rate:</string>
+    <string name="interest_percentage">0%</string>
+    <string name="years_title">Years</string>
+    <string name="emi_title">EMI</string>
+    <string name="total_amount_title">Total Amount</string>
+    <string name="five_year">5</string>
+    <string name="ten_year">10</string>
+    <string name="fifteen_year">15</string>
+    <string name="twenty_year">20</string>
+    <string name="twentyfive_year">25</string>
+    <string name="thrity_year">30</string>
+    <string name="default_value">0.00</string>
+</resources>
