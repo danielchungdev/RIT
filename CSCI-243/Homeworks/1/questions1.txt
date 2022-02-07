@@ -1,0 +1,103 @@
+Lab 1: System Intro
+Activity 1: questions1.txt, warning.c : 30 points total
+Name: <<< DANIEL CHUNG  >>>
+
+1. When you first log in, what is the absolute path of your home directory?
+
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+
+	/home/stu13/s4/dec8768
+
+2. What command will list the contents of your current
+working directory, so that it shows the difference between
+files and directories without descending into any directories?
+
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+	
+	ls -a
+
+3. What command would you use to change your working directory from
+your home directory to the existing subdirectory Courses/?
+
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+
+	cd [Directory name]
+
+4. Within the Courses/ subdirectory, what command would you use to
+create the subdirectory csci243/?
+
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+	
+	mkdir [Directory name]
+
+5. When warning.c is compiled as: 
+        gcc -o warning warning.c
+    There is no indication of any warnings/problems, but there are issues.
+    
+    a.) What compiler flags are used to enable the display of warnings?
+    
+        <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+	-Wall
+	-Wextra 
+	-pedantic 
+	-std=c99
+
+	:  2 points
+    
+    b.) In your own words, explain all warnings from compiling warning.c
+	with the recommended compilation options.
+    
+        <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+
+	In the function compute there is a variable that is not being used. While this won't stop the program from
+	compiling, it wastes memory space which is why is sugested to deleted. 
+
+	In the main functions there is an array of size 0. While this wont stop the program from compiling it is 
+	taking up memory space that can be used for something else. 
+
+	The main functions takes a (int argc) which is unused and therefor taking up unnecesary space in memory.
+
+	In the function compute, it is declared as (int compute) and it is not returning anything. It is expecting a
+	return type of type int.
+	
+	In main there is a uninintialized variable. It is declared but it has not been given any value.
+	)	
+	:  4 points
+    
+    c.) Fix warning.c so it compiles without warning and runs correctly to
+	produce the output specified in the code documentation.
+
+	(Your answer is the submitted code.)
+	: 10 points
+    
+    d.) There is a 'super-picky' warning flag; what is it and what problem
+	does it catch in warning.c?
+
+        <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+	:  1 points
+
+
+6. What compiler flag compiles C programs using the ISO C99 standard?
+
+    	<<< YOUR ANSWER BELOW HERE (and do not remove this line)
+	-std=c99 
+   
+7. Put the four steps of compilation process into their proper order from
+first to last.
+
+    A. Link
+    B. Assemble
+    C. Preprocess
+    D. Compile
+    
+    	<<< YOUR ANSWER BELOW HERE (and do not remove this line)
+	
+	C. (Preprocess)
+	D. (Compile)
+	B. (Assemble)
+	A. (Link)	
+
+
+
+
+	

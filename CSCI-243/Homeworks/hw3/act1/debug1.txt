@@ -1,0 +1,99 @@
+dec8768@glados:~/Courses/CS243/Homeworks/hw3/act1$ make phase1
+gcc -Wno-format -g -ggdb -std=c99 good-life.c -o good-life -lcurses
+good-life.c: In function ‘survivalRule’:
+good-life.c:50:22: warning: comparison between pointer and integer
+    if( life[row][col]== "*")
+                      ^~
+Starting program: /home/stu13/s4/dec8768/Courses/CS243/Homeworks/hw3/act1/good-life 123
+
+        ..Welcome to the Game of life..
+
+Please enter the initial number of organisms: 123
+
+Program received signal SIGSEGV, Segmentation fault.
+                                                    __strlen_avx2 () at ../sysdeps/x86_64/multiarch/strlen-avx2.S:62
+62      ../sysdeps/x86_64/multiarch/strlen-avx2.S: No such file or directory.
+(gdb) backtrace
+#0  __strlen_avx2 () at ../sysdeps/x86_64/multiarch/strlen-avx2.S:62
+#1  0x00007ffff75f44d3 in _IO_vfprintf_internal (s=s@entry=0x7fffffffe360, format=format@entry=0x555555555443 "%s",
+    ap=ap@entry=0x7fffffffe510) at vfprintf.c:1643
+#2  0x00007ffff76c9169 in ___vsnprintf_chk (s=0x555555788e90 "", maxlen=<optimized out>, flags=1,
+    slen=<optimized out>, format=0x555555555443 "%s", args=0x7fffffffe510) at vsnprintf_chk.c:63
+#3  0x00007ffff7bc8417 in ?? () from /lib/x86_64-linux-gnu/libncurses.so.5
+#4  0x00007ffff7bc39ef in vwprintw () from /lib/x86_64-linux-gnu/libncurses.so.5
+#5  0x00007ffff7bc3ab6 in printw () from /lib/x86_64-linux-gnu/libncurses.so.5
+#6  0x0000555555555281 in main () at good-life.c:200
+(gdb) down
+#0  __strlen_avx2 () at ../sysdeps/x86_64/multiarch/strlen-avx2.S:62
+62      ../sysdeps/x86_64/multiarch/strlen-avx2.S: No such file or directory.
+(gdb) down
+Bottom (innermost) frame selected; you cannot go down.
+(gdb) up
+#1  0x00007ffff75f44d3 in _IO_vfprintf_internal (s=s@entry=0x7fffffffe360, format=format@entry=0x555555555443 "%s",
+    ap=ap@entry=0x7fffffffe510) at vfprintf.c:1643
+1643    vfprintf.c: No such file or directory.
+(gdb) up
+#2  0x00007ffff76c9169 in ___vsnprintf_chk (s=0x555555788e90 "", maxlen=<optimized out>, flags=1,
+    slen=<optimized out>, format=0x555555555443 "%s", args=0x7fffffffe510) at vsnprintf_chk.c:63
+63      vsnprintf_chk.c: No such file or directory.
+(gdb) up
+#3  0x00007ffff7bc8417 in ?? () from /lib/x86_64-linux-gnu/libncurses.so.5
+(gdb) up
+#4  0x00007ffff7bc39ef in vwprintw () from /lib/x86_64-linux-gnu/libncurses.so.5
+(gdb) up
+#5  0x00007ffff7bc3ab6 in printw () from /lib/x86_64-linux-gnu/libncurses.so.5
+(gdb) up
+#6  0x0000555555555281 in main () at good-life.c:200
+200                                               printw("%s", life[row][col]);
+(gdb) list
+195                             move( 0, 0);
+196                                     for(row = 0; row<20; row++)
+197                             {
+198                                       for(col = 0; col<20; col++)
+199                                       {
+200                                               printw("%s", life[row][col]);
+201                                       }
+202                                       printw( "\n");
+203                             }
+204                             move( 20, 0);
+(gdb) break
+Breakpoint 4 at 0x555555555281: file good-life.c, line 198.
+(gdb) info break
+Num     Type           Disp Enb Address            What
+4       breakpoint     keep y   0x0000555555555281 in main at good-life.c:198
+(gdb) break 200
+Breakpoint 5 at 0x55555555523c: file good-life.c, line 200.
+(gdb) info break
+Num     Type           Disp Enb Address            What
+4       breakpoint     keep y   0x0000555555555281 in main at good-life.c:198
+5       breakpoint     keep y   0x000055555555523c in main at good-life.c:200
+(gdb) delete breakpoint 1
+No breakpoint number 1.
+(gdb) delete breakpoint 4
+(gdb) info break
+Num     Type           Disp Enb Address            What
+5       breakpoint     keep y   0x000055555555523c in main at good-life.c:200
+
+-------------------------------------------------------------------------------------------------------------
+
+Starting program: /home/stu13/s4/dec8768/Courses/CS243/Homeworks/hw3/act1/good-life 123
+
+        ..Welcome to the Game of life..
+
+Please enter the initial number of organisms: 123
+
+Breakpoint 5, main () at good-life.c:200
+200                                               printw("%s", life[row][col]);
+(gdb) display row
+1: row = 0
+(gdb) display col
+2: col = 0
+(gdb) whatis life
+type = char [20][20]
+(gdb) continue
+Continuing.
+
+Program received signal SIGSEGV, Segmentation fault.
+                                                    __strlen_avx2 () at ../sysdeps/x86_64/multiarch/strlen-avx2.S:62
+62      ../sysdeps/x86_64/multiarch/strlen-avx2.S: No such file or directory.
+

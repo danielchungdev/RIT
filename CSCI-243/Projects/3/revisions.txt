@@ -1,0 +1,11 @@
+commit 57ea8c9472d2eaf11ea5534e3db118fbf6267d50
+Author: Daniel Eduardo Chung <dec8768@cs.rit.edu>
+Date:   Sat Dec 8 23:27:59 2018 -0500
+
+    Finished?
+
+commit afbbae5dffd5eff5973f0a104900b6d6ee28972e
+Author: Daniel Eduardo Chung <dec8768@cs.rit.edu>
+Date:   Sat Dec 8 17:00:14 2018 -0500
+
+    Most read file and strating threading

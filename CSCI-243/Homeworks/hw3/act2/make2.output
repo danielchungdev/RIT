@@ -1,0 +1,30 @@
+gcc -std=c99 -ggdb -Wall -Wextra -pedantic  -c good-life.c
+In file included from good-life.c:29:0:
+good-life.c: In function ‘main’:
+good-life.c:179:20: error: ‘numrows’ undeclared (first use in this function)
+  getmaxyx( stdscr, numrows, numcols);  // this is a MACRO; no & needed
+                    ^
+good-life.c:179:20: note: each undeclared identifier is reported only once for each function it appears in
+good-life.c:179:29: error: ‘numcols’ undeclared (first use in this function); did you mean ‘numrows’?
+  getmaxyx( stdscr, numrows, numcols);  // this is a MACRO; no & needed
+                             ^
+good-life.c:220:4: error: too many arguments to function ‘birthRule’
+    birthRule(life, x, y);
+    ^~~~~~~~~
+good-life.c:80:7: note: declared here
+  void birthRule(char life[][20])
+       ^~~~~~~~~
+good-life.c:221:4: error: too many arguments to function ‘survivalRule’
+    survivalRule(life, x, y);
+    ^~~~~~~~~~~~
+good-life.c:42:7: note: declared here
+  void survivalRule(char life[][20])
+       ^~~~~~~~~~~~
+good-life.c:222:4: error: too many arguments to function ‘deathRule’
+    deathRule(life, x, y);
+    ^~~~~~~~~
+good-life.c:119:7: note: declared here
+  void deathRule(char life[][20])
+       ^~~~~~~~~
+Makefile:12: recipe for target 'good-life.o' failed
+make: *** [good-life.o] Error 1

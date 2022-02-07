@@ -1,0 +1,23 @@
+commit 0077472cc41dfd7181474db03cf4d4ca590bb8d9
+Author: Daniel Eduardo Chung <dec8768@cs.rit.edu>
+Date:   Thu Sep 20 05:43:37 2018 -0400
+
+    Activity2 Part A
+
+commit 681aaf7081a3ff940445d0a729614c53979dc26d
+Author: Daniel Eduardo Chung <dec8768@cs.rit.edu>
+Date:   Wed Sep 19 23:57:17 2018 -0400
+
+    PHASE 2
+
+commit c760e0b09d1cf3c1837e24ff1737542b643e5b26
+Author: Daniel Eduardo Chung <dec8768@cs.rit.edu>
+Date:   Wed Sep 19 00:48:01 2018 -0400
+
+    Phase1 Ended?
+
+commit 36223195ac94bd0bcc74b833140d57b063e33b5c
+Author: Daniel Eduardo Chung <dec8768@cs.rit.edu>
+Date:   Sun Sep 16 19:19:05 2018 -0400
+
+    First commit on Homework 3

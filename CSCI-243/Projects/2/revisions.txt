@@ -1,0 +1,29 @@
+commit d2a19b64a9ad411d2a8f8f6b6cc9db66fc186c39
+Author: Daniel Eduardo Chung <dec8768@cs.rit.edu>
+Date:   Sat Nov 3 22:09:56 2018 -0400
+
+    Finished
+
+commit 17b68ea59174c31d18e2b0690acf20bf37409ccc
+Author: Daniel Eduardo Chung <dec8768@cs.rit.edu>
+Date:   Sat Nov 3 21:55:14 2018 -0400
+
+    getopt finished.
+
+commit 7d1d18a31e942bc11a83b0aa4032620028fca8ed
+Author: Daniel Eduardo Chung <dec8768@cs.rit.edu>
+Date:   Sat Nov 3 19:26:19 2018 -0400
+
+    getopt added
+
+commit 38c8f215aa9cab72ec0833a6195aa371eeab11a0
+Author: Daniel Eduardo Chung <dec8768@cs.rit.edu>
+Date:   Sat Nov 3 15:48:39 2018 -0400
+
+    Reading the file.
+
+commit 8a29244b6ba74396b4a8388d73acaf64e46429b5
+Author: Daniel Eduardo Chung <dec8768@cs.rit.edu>
+Date:   Sat Nov 3 15:46:33 2018 -0400
+
+    First commit

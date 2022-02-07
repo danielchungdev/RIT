@@ -1,0 +1,57 @@
+gcc -std=c99 -ggdb -Wall -Wextra -pedantic  -c good-life.c
+good-life.c: In function ‘survivalRule’:
+good-life.c:71:22: warning: statement with no effect [-Wunused-value]
+       life[row][col] =='*';
+       ~~~~~~~~~~~~~~~^~~~~
+good-life.c:42:41: warning: unused parameter ‘x’ [-Wunused-parameter]
+  void survivalRule(char life[][20], int x, int y)
+                                         ^
+good-life.c:42:48: warning: unused parameter ‘y’ [-Wunused-parameter]
+  void survivalRule(char life[][20], int x, int y)
+                                                ^
+good-life.c: In function ‘birthRule’:
+good-life.c:103:10: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+       if(life[row + 1][col + 1] = '*')
+          ^~~~
+good-life.c:107:23: warning: statement with no effect [-Wunused-value]
+        life[row][col] =='*';
+        ~~~~~~~~~~~~~~~^~~~~
+good-life.c:79:38: warning: unused parameter ‘x’ [-Wunused-parameter]
+  void birthRule(char life[][20], int x, int y)
+                                      ^
+good-life.c:79:45: warning: unused parameter ‘y’ [-Wunused-parameter]
+  void birthRule(char life[][20], int x, int y)
+                                             ^
+good-life.c: In function ‘deathRule’:
+good-life.c:140:10: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+       if(life[row + 1][col + 1] = '*')
+          ^~~~
+good-life.c:144:22: warning: statement with no effect [-Wunused-value]
+       life[row][col] ==' ';
+       ~~~~~~~~~~~~~~~^~~~~
+good-life.c:116:38: warning: unused parameter ‘x’ [-Wunused-parameter]
+  void deathRule(char life[][20], int x, int y)
+                                      ^
+good-life.c:116:45: warning: unused parameter ‘y’ [-Wunused-parameter]
+  void deathRule(char life[][20], int x, int y)
+                                             ^
+good-life.c: In function ‘main’:
+good-life.c:162:8: warning: variable ‘numcols’ set but not used [-Wunused-but-set-variable]
+    int numcols;
+        ^~~~~~~
+good-life.c:161:8: warning: variable ‘numrows’ set but not used [-Wunused-but-set-variable]
+    int numrows;
+        ^~~~~~~
+good-life.c:160:9: warning: unused variable ‘ans’ [-Wunused-variable]
+    char ans;
+         ^~~
+good-life.c:156:14: warning: unused variable ‘b’ [-Wunused-variable]
+    int i, a, b, row, col;
+              ^
+good-life.c:156:11: warning: unused variable ‘a’ [-Wunused-variable]
+    int i, a, b, row, col;
+           ^
+good-life.c:155:14: warning: unused variable ‘gens’ [-Wunused-variable]
+    int orgs, gens;
+              ^~~~
+gcc -std=c99 -ggdb -Wall -Wextra -pedantic -o good-life good-life.o  -lm -lcurses

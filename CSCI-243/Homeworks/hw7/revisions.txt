@@ -1,0 +1,17 @@
+commit 703664ce97bace51440373ff80fd777243e00203
+Author: Daniel Eduardo Chung <dec8768@cs.rit.edu>
+Date:   Thu Nov 15 23:32:14 2018 -0500
+
+    Finished
+
+commit 368f0386e246cae11ff9dde05294532115435730
+Author: Daniel Eduardo Chung <dec8768@cs.rit.edu>
+Date:   Thu Nov 15 13:25:30 2018 -0500
+
+    Working on threads
+
+commit a15291152c008e52f910510b8979bc73cb19dec8
+Author: Daniel Eduardo Chung <dec8768@cs.rit.edu>
+Date:   Sun Nov 11 12:57:28 2018 -0500
+
+    pt-cruisers created. Parsing of the first argument

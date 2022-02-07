@@ -1,0 +1,11 @@
+commit 50dafeca8845076a21f7edf15917b4c927f579c0
+Author: Daniel Eduardo Chung <dec8768@cs.rit.edu>
+Date:   Thu Oct 4 22:17:20 2018 -0400
+
+    Arranged the dates for the log.c
+
+commit 2011eaf0bc173d5ecc159a3577848a5d3f2829f7
+Author: Daniel Eduardo Chung <dec8768@cs.rit.edu>
+Date:   Thu Oct 4 20:56:41 2018 -0400
+
+    All leaks were fixed

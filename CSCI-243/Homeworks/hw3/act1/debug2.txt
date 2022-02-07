@@ -1,0 +1,234 @@
+Starting program: /home/stu13/s4/dec8768/Courses/CS243/Homeworks/hw3/act1/good-life
+
+        ..Welcome to the Game of life..
+
+Please enter the initial number of organisms: 123
+
+Breakpoint 1, main () at good-life.c:201
+201                                               printw("%d", life[row][col]);
+(gdb) display row
+1: row = 0
+(gdb) display col
+2: col = 0
+(gdb) display life[row][col]
+3: life[row][col] = 2 '\002'
+(gdb)
+(gdb) continue
+Continuing.
+
+Breakpoint 1, main () at good-life.c:201
+201                                               printw("%d", life[row][col]);
+1: row = 0
+2: col = 1
+3: life[row][col] = 0 '\000'
+(gdb) continue
+Continuing.
+
+Breakpoint 1, main () at good-life.c:201
+201                                               printw("%d", life[row][col]);
+1: row = 0
+2: col = 2
+3: life[row][col] = 0 '\000'
+(gdb) continue
+Continuing.
+
+Breakpoint 1, main () at good-life.c:201
+201                                               printw("%d", life[row][col]);
+1: row = 0
+2: col = 3
+3: life[row][col] = 0 '\000'
+(gdb) list
+196                                     for(row = 0; row<20; row++)
+197                             {
+198                                       for(col = 0; col<20; col++)
+199                                       {
+200                                             //fix2 %d instead of %s
+201                                               printw("%d", life[row][col]);
+202                                       }
+203                                       printw( "\n");
+204                             }
+205                             move( 20, 0);
+(gdb) continue
+Continuing.
+
+Breakpoint 1, main () at good-life.c:201
+201                                               printw("%d", life[row][col]);
+1: row = 0
+2: col = 4
+3: life[row][col] = -1 '\377'
+(gdb) continue
+Continuing.
+
+Breakpoint 1, main () at good-life.c:201
+201                                               printw("%d", life[row][col]);
+1: row = 0
+2: col = 5
+3: life[row][col] = 127 '\177'
+(gdb) continue
+Continuing.
+
+Breakpoint 1, main () at good-life.c:201
+201                                               printw("%d", life[row][col]);
+1: row = 0
+2: col = 6
+3: life[row][col] = 0 '\000'
+(gdb) continue
+Continuing.
+
+Breakpoint 1, main () at good-life.c:201
+201                                               printw("%d", life[row][col]);
+1: row = 0
+2: col = 7
+3: life[row][col] = 0 '\000'
+(gdb) continue
+Continuing.
+
+Breakpoint 1, main () at good-life.c:201
+201                                               printw("%d", life[row][col]);
+1: row = 0
+2: col = 8
+3: life[row][col] = 0 '\000'
+(gdb) continue
+Continuing.
+
+Breakpoint 1, main () at good-life.c:201
+201                                               printw("%d", life[row][col]);
+1: row = 0
+2: col = 9
+3: life[row][col] = 0 '\000'
+(gdb) continue
+Continuing.
+
+Breakpoint 1, main () at good-life.c:201
+201                                               printw("%d", life[row][col]);
+1: row = 0
+2: col = 10
+3: life[row][col] = 0 '\000'
+(gdb) continue
+Continuing.
+
+Breakpoint 1, main () at good-life.c:201
+201                                               printw("%d", life[row][col]);
+1: row = 0
+2: col = 11
+3: life[row][col] = 0 '\000'
+(gdb) continue
+Continuing.
+
+Breakpoint 1, main () at good-life.c:201
+201                                               printw("%d", life[row][col]);
+1: row = 0
+2: col = 12
+3: life[row][col] = 0 '\000'
+(gdb) continue
+Continuing.
+
+Breakpoint 1, main () at good-life.c:201
+201                                               printw("%d", life[row][col]);
+1: row = 0
+2: col = 13
+3: life[row][col] = 0 '\000'
+(gdb) continue
+Continuing.
+
+Breakpoint 1, main () at good-life.c:201
+201                                               printw("%d", life[row][col]);
+1: row = 0
+2: col = 14
+3: life[row][col] = 0 '\000'
+(gdb) continue
+Continuing.
+
+Breakpoint 1, main () at good-life.c:201
+201                                               printw("%d", life[row][col]);
+1: row = 0
+2: col = 15
+3: life[row][col] = 0 '\000'
+(gdb) continue
+Continuing.
+
+Breakpoint 1, main () at good-life.c:201
+201                                               printw("%d", life[row][col]);
+1: row = 0
+2: col = 16
+3: life[row][col] = 64 '@'
+(gdb) contifnue
+Undefined command: "contifnue".  Try "help".
+(gdb) continue
+Continuing.
+
+Breakpoint 1, main () at good-life.c:201
+201                                               printw("%d", life[row][col]);
+1: row = 0
+2: col = 17
+3: life[row][col] = -25 '\347'
+(gdb) continue
+Continuing.
+
+Breakpoint 1, main () at good-life.c:201
+201                                               printw("%d", life[row][col]);
+1: row = 0
+2: col = 18
+3: life[row][col] = -1 '\377'
+(gdb) continue
+Continuing.
+
+Breakpoint 1, main () at good-life.c:201
+201                                               printw("%d", life[row][col]);
+1: row = 0
+2: col = 19
+3: life[row][col] = -1 '\377'
+(gdb) continue
+Continuing.
+
+Breakpoint 1, main () at good-life.c:201
+201                                               printw("%d", life[row][col]);
+1: row = 1
+2: col = 0
+3: life[row][col] = -1 '\377'
+(gdb) list
+196                                     for(row = 0; row<20; row++)
+197                             {
+198                                       for(col = 0; col<20; col++)
+199                                       {
+200                                             //fix2 %d instead of %s
+201                                               printw("%d", life[row][col]);
+202                                       }
+203                                       printw( "\n");
+204                             }
+205                             move( 20, 0);
+(gdb) continue
+Continuing.
+
+Breakpoint 1, main () at good-life.c:201
+201                                               printw("%d", life[row][col]);
+1: row = 1
+2: col = 1
+3: life[row][col] = 127 '\177'
+(gdb) continue
+Continuing.
+
+Breakpoint 1, main () at good-life.c:201
+201                                               printw("%d", life[row][col]);
+1: row = 1
+2: col = 2
+3: life[row][col] = 0 '\000'
+(gdb) break 205
+Breakpoint 2 at 0x5555555552b6: file good-life.c, line 205.
+(gdb) info break
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x000055555555523c in main at good-life.c:200
+        breakpoint already hit 23 times
+2       breakpoint     keep y   0x00005555555552b6 in main at good-life.c:205
+(gdb) delete break 1
+(gdb) info break
+Num     Type           Disp Enb Address            What
+2       breakpoint     keep y   0x00005555555552b6 in main at good-life.c:205
+(gdb) continue
+Continuing.
+
+Breakpoint 2, main () at good-life.c:205
+205                             move( 20, 0);
+1: row = 20
+2: col = 20
+3: life[row][col] = 85 'U'
