@@ -1,0 +1,45 @@
+		body {
+			background-color: #DAA520;
+		}
+		h1 {
+			font-size: 32px;
+			font-family: "Arial";
+			color: 	#FFFF00;
+		}
+		p{
+			font-size: 20px;
+			font-family: "Helvetica";
+		}
+		#header {
+			width: 680px;
+			height: 220px;
+			background-image: url("banner.png");
+		}
+		#navlist {
+			margin: 0px;
+			padding: 0px;
+			background-color: #FFFFE0;
+			width: 680px;
+		}
+		#navlist ul li{
+			font-family: "Arial";
+			font-size: 24px;
+			display: inline;
+			padding-left: 6px;
+			padding-right: 12px;
+		}
+		#thispage{
+			font-weight: 700;
+		}
+		.finaltable{
+			width: 500px;
+			font-family: "Times";
+		}
+		td {
+			border: 2px;
+			border-style: solid;
+		}
+		th {
+			border: 2px;
+			border-style: solid;
+		}

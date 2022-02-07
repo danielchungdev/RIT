@@ -1,0 +1,56 @@
+	<style>
+		html{
+			background-color:lightblue;
+			}
+		body{
+			font-family: "Trebuchete MS", Tahoma, Verdana;
+			margin-left: 25%;
+			margin-right:25%;
+			}
+		h1{
+			color: white;
+			font-size: 300%;
+			}
+		div.img{
+			width: 300px;
+			height: 300px;
+			background-image:url("itsme");
+			}
+		h3{
+			text-decoration: underline;
+			}
+		figure{
+			float: right;
+			}
+		figcaption{
+			text-align: center;
+			font-style: italic;
+			}
+				h2{
+			font-size: 250%;
+			font-style: italic;
+			font-weight: bold;
+			}
+		body a:link{
+			color: red;
+			text-decoration: none;
+			}
+		body a:visited{
+			color: white;
+			text-decoration: none;
+			}
+		body a:hover{
+			color: yellow;
+			text-decoration: underline;
+			}
+		body a:active{
+			color: blue;
+			text-decoration: none;
+			}
+		.box{
+			border: 10px black;
+			border-style: solid;
+			float: right;
+			margin-top: 0;
+			}
+	</style>

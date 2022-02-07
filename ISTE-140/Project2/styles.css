@@ -1,0 +1,164 @@
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) {
+	html{
+	  font-family: GT Walsheim, Filson, FF Mark, sans-serif;
+	}
+	body{
+	  background-color: #FFFFF7;
+	}
+	h1{
+	  font-size: 400%;
+	  color: #4f5b66;
+	  text-align: center;
+	}
+	h2{
+	  color: #4f5b66;
+	}
+    nav {
+	background: #4f5b66;
+	text-align: center;
+	}
+	nav ul {
+	list-style-type: none;
+	margin-left: 12%;
+	margin-right: 15%;
+	display:flex;
+	padding-top: 1.2%;
+	}
+	nav li{
+	flex : 1 1 0;
+	}
+	nav a{
+	text-decoration: none;
+	font-weight: bolder;
+	text-align:center;
+	color: #98dafc;
+	}
+    body a:link{
+	color: #FFFFF7;
+	text-decoration: none;
+	}
+	body a:visited{
+	color:#FFFFF7;
+	text-decoration: none;
+	}
+	body a:hover{
+	color: #ff028d;
+	text-decoration: none;
+	}
+	body a:active{
+	color: #ff028d;
+	text-decoration: none;
+	}
+  .paragraph{
+	  margin-left: 20%;
+	  margin-right: 20%;
+  }
+  .navbar{
+	  padding-bottom: 2%;
+  } 
+  .references{
+	  float: left;
+	  margin-left: 2%;
+	  max-width: 10%;
+	  clear: right;
+  }
+  .first{
+	  max-width: 30%;
+  }
+  .second{
+	margin-right: 10%;
+  }
+  img {
+	  max-width: 100%;
+	  float: right;
+	  clear: right;
+	  clear: top;
+	  padding-right: 2%;
+  }
+  .chr{
+	  margin-right: 15%
+  }
+  }
+/*IPHONE 6, 7, 8*/
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) { 
+  
+  html{
+	  font-family: GT Walsheim, Filson, FF Mark, sans-serif;
+  }
+  body{
+	  background-color: #FFFFF7;
+  }
+    img {
+	  max-width: 50%
+  }
+  h1{
+	  font-size: 400%;
+	  color: #4f5b66;
+	  text-align: center;
+  }
+  h2{
+	  color: #4f5b66;
+  }
+  nav{
+	  text-align:center;
+	  margin-left: 20%;
+	  margin-right: 20%;
+  }
+  nav ul{
+	  list-style-type: none; 
+	  padding: 0;
+  }
+  
+  nav a{
+	  text-decoration: none;
+  }
+  body a:link{
+	color: #3d6098;
+	text-decoration: none;
+	}
+	body a:visited{
+	color:#3d6098;
+	text-decoration: none;
+	}
+	body a:hover{
+	color: #f04b4c;
+	text-decoration: none;
+	}
+	body a:active{
+	color: #f04b4c;
+	text-decoration: none;
+	}
+  img {
+  max-width: 100%;
+  float: right;
+  clear: right;
+  clear: top;
+  padding-right: 2%;
+  }
+  .paragraph{
+	  margin-left: 5%;
+	  margin-right: 5%;
+  }
+  .navbar{
+	  padding-bottom: 2%;
+  }
+    .first{
+	  max-width: 30%;
+  }
+  .second{
+	margin-right: 10%;
+  }
+    .chr{
+	  margin-right: 15%
+  }
+    .references{
+	  float: left;
+	  margin-left: 2%;
+	  max-width: 10%;
+	  clear: right;
+  }
+}
