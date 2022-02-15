@@ -33,7 +33,7 @@
                 $returnHTML = "
                     <table border = '1'>
                         <tr>
-                            <th>ID</th><th>First Name</th><th>Last Name</th><th>Nickname</th>
+                            <th>PersonID</th><th>First Name</th><th>Last Name</th><th>Nickname</th>
                         </tr>
                 ";
                 for ($i = 0; $i < count($res); $i++){
@@ -88,7 +88,7 @@
                 $returnHTML .= "
                     <table border = '1'>
                         <tr>
-                            <th>ID</th><th>Phone Type</th><th>Phone Number</th><th>Area Code</th>
+                            <th>PersonID</th><th>Phone Type</th><th>Phone Number</th><th>Area Code</th>
                         </tr>
                 ";
                 for($i = 0; $i < count($res); $i++){
