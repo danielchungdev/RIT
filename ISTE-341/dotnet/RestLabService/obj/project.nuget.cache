@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "CRdiidQuC9jCsdE29l8Bl2PG6Ju1IiU7zNZ5ObQbeDBEXWjpwuFkWEVaI680WbE5q9qZx0xddv027zfHoV2dzw==",
+  "success": true,
+  "projectFilePath": "/Users/danielchung/Desktop/RIT/ISTE-341/dotnet/RestLabService/RestLabService.csproj",
+  "expectedPackageFiles": [
+    "/Users/danielchung/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "/Users/danielchung/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/Users/danielchung/.nuget/packages/swashbuckle.aspnetcore/6.2.3/swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "/Users/danielchung/.nuget/packages/swashbuckle.aspnetcore.swagger/6.2.3/swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "/Users/danielchung/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.2.3/swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "/Users/danielchung/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.2.3/swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}

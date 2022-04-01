@@ -1,0 +1,11 @@
+/Users/danielchung/Desktop/RIT/ISTE-341/dotnet/productservice/bin/Debug/net6.0/publish/productservice
+/Users/danielchung/Desktop/RIT/ISTE-341/dotnet/productservice/bin/Debug/net6.0/publish/appsettings.Development.json
+/Users/danielchung/Desktop/RIT/ISTE-341/dotnet/productservice/bin/Debug/net6.0/publish/appsettings.json
+/Users/danielchung/Desktop/RIT/ISTE-341/dotnet/productservice/bin/Debug/net6.0/publish/productservice.dll
+/Users/danielchung/Desktop/RIT/ISTE-341/dotnet/productservice/bin/Debug/net6.0/publish/productservice.deps.json
+/Users/danielchung/Desktop/RIT/ISTE-341/dotnet/productservice/bin/Debug/net6.0/publish/productservice.runtimeconfig.json
+/Users/danielchung/Desktop/RIT/ISTE-341/dotnet/productservice/bin/Debug/net6.0/publish/productservice.pdb
+/Users/danielchung/Desktop/RIT/ISTE-341/dotnet/productservice/bin/Debug/net6.0/publish/Microsoft.OpenApi.dll
+/Users/danielchung/Desktop/RIT/ISTE-341/dotnet/productservice/bin/Debug/net6.0/publish/Swashbuckle.AspNetCore.Swagger.dll
+/Users/danielchung/Desktop/RIT/ISTE-341/dotnet/productservice/bin/Debug/net6.0/publish/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/danielchung/Desktop/RIT/ISTE-341/dotnet/productservice/bin/Debug/net6.0/publish/Swashbuckle.AspNetCore.SwaggerUI.dll
