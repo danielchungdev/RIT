@@ -3,7 +3,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.daniel.chung</groupId>
+    <groupId>com.chung.daniel</groupId>
     <artifactId>chungprojecttwo</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
@@ -15,19 +15,17 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <version>3.10.1</version>
                 <inherited>true</inherited>
                 <configuration>
-                    <release>16</release>
+                    <release>17</release>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.3.1</version>
             </plugin>
-
         </plugins>
     </build>
 
@@ -45,32 +43,53 @@
 
     <dependencies>
 
-        <dependency>
+        <!-- <dependency>
             <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpcore</artifactId>
+            <artifactId>httpcomponents-core</artifactId>
             <version>4.4.15</version>
-            <scope>provided</scope>
             <type>pom</type>
         </dependency>
 
 
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpcomponents-client</artifactId>
+            <version>4.5.13</version>
+            <type>pom</type>
+        </dependency> -->
+
+
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpcore</artifactId>
+            <version>4.4.15</version>
+            <type>pom</type>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <version>4.5.13</version>
-            <scope>provided</scope>
             <type>pom</type>
+            <scope>provided</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.2.2</version>
+            <scope>compile</scope>
         </dependency>
 
 
         <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging-api</artifactId>
-            <scope>provided</scope>
             <version>1.1</version>
         </dependency>
 
-        
+
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -83,7 +102,6 @@
             <!-- use the following artifactId if you don't need servlet 2.x compatibility -->
             <!-- artifactId>jersey-container-servlet</artifactId -->
         </dependency>
-
         <dependency>
             <groupId>org.glassfish.jersey.inject</groupId>
             <artifactId>jersey-hk2</artifactId>
@@ -97,21 +115,18 @@
         <dependency>
             <groupId>com.french.bryan</groupId>
             <artifactId>CompanyData</artifactId>
-            <version>0.1</version>
-        </dependency>      
-
+            <version>1.0</version>
+        </dependency>
     </dependencies>
     <properties>
         <jersey.version>3.0.1</jersey.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
     <repositories>
         <repository>
-              <id>project.local</id>
-              <name>project</name>
-              <url>file:${project.basedir}/repo</url>
+            <id>project.local</id>
+            <name>project</name>
+            <url>file:${project.basedir}/repo</url>
         </repository>
-    </repositories>  
-
+    </repositories>
 </project>
