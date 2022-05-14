@@ -1,0 +1,18 @@
+.card{
+    background-color: rgb(204, 150, 0);
+    color: white;
+    width: auto;
+    height: auto;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 5px 5px #88888869;
+}
+
+.card button{
+    float: right;
+}
+
+.displaynone{
+    display: none;
+}

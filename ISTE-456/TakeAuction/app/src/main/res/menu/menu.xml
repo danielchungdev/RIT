@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home_menu"
+        android:title="Home">Home</item>
+    <item
+        android:id="@+id/cart_menu"
+        android:title="Cart">Cart</item>
+    <item
+        android:id="@+id/logout_menu"
+        android:title="Logout">Logout</item>
+</menu>

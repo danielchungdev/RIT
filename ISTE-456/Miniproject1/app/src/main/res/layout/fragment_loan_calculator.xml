@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/second_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.16" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/firstline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.08" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/firstline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.17" />
+
+    <TextView
+        android:id="@+id/loanAmountText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:inputType="numberDecimal"
+        android:text="@string/loan_tittle"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/firstline"
+        app:layout_constraintEnd_toStartOf="@+id/loanAmountNumber"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/loanAmountNumber"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/firstline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/loanAmountText"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/interestRateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:text="@string/interest_title"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/second_line"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/firstline"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <SeekBar
+        android:id="@+id/interestRateBar"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:max="100"
+        android:progress="0"
+        app:layout_constraintBottom_toTopOf="@+id/second_line"
+        app:layout_constraintEnd_toStartOf="@+id/displayInterest"
+        app:layout_constraintStart_toEndOf="@+id/interestRateText"
+        app:layout_constraintTop_toTopOf="@+id/firstline"
+        app:layout_constraintVertical_bias="0.473"
+        app:layout_constraintWidth="match_constraint" />
+
+    <TextView
+        android:id="@+id/displayInterest"
+        android:layout_width="60dp"
+        android:layout_height="27dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/interest_percentage"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/second_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/firstline" />
+
+    <TableLayout
+        android:id="@+id/layout_width"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/firstline2">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/years_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:paddingStart="30dp"
+                android:paddingLeft="0sp"
+                android:paddingEnd="0sp"
+                android:text="@string/years_title"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/emi_tittle"
+                android:layout_width="71dp"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:maxWidth="95dp"
+                android:minWidth="95dp"
+                android:paddingStart="30dp"
+                android:paddingLeft="0sp"
+                android:paddingEnd="0sp"
+                android:text="@string/emi_title"
+                android:textAlignment="textStart"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/TotalAmount_tittle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:maxWidth="145dp"
+                android:minWidth="145dp"
+                android:paddingStart="0sp"
+                android:paddingLeft="0sp"
+                android:paddingEnd="0sp"
+                android:text="@string/total_amount_title"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/five_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:paddingStart="30dp"
+                android:paddingLeft="0sp"
+                android:paddingTop="10dp"
+                android:paddingEnd="0sp"
+                android:paddingBottom="10dp"
+                android:text="@string/five_year"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/emi_five"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:maxWidth="95dp"
+                android:minWidth="95dp"
+                android:paddingStart="30dp"
+                android:paddingLeft="0sp"
+                android:paddingTop="10dp"
+                android:paddingEnd="0sp"
+                android:paddingBottom="10dp"
+                android:text="@string/default_value" />
+
+            <TextView
+                android:id="@+id/totalAmount_five"
+                android:layout_width="205dp"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:maxWidth="145dp"
+                android:minWidth="145dp"
+                android:padding="10dp"
+                android:paddingStart="0sp"
+                android:paddingLeft="0sp"
+                android:paddingEnd="0sp"
+                android:paddingBottom="0sp"
+                android:text="@string/default_value"
+                android:textAlignment="center" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/ten_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:paddingStart="30dp"
+                android:paddingLeft="0sp"
+                android:paddingTop="10dp"
+                android:paddingEnd="0sp"
+                android:paddingBottom="10dp"
+                android:text="@string/ten_year"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/emi_ten"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:maxWidth="95dp"
+                android:minWidth="95dp"
+                android:paddingStart="30dp"
+                android:paddingLeft="0sp"
+                android:paddingTop="10dp"
+                android:paddingEnd="0sp"
+                android:paddingBottom="10dp"
+                android:text="@string/default_value" />
+
+            <TextView
+                android:id="@+id/totalAmount_ten"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:maxWidth="145dp"
+                android:minWidth="145dp"
+                android:paddingStart="0sp"
+                android:paddingLeft="0sp"
+                android:paddingTop="10dp"
+                android:paddingEnd="0sp"
+                android:paddingBottom="0sp"
+                android:text="@string/default_value"
+                android:textAlignment="center" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/fifteen_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:paddingStart="30dp"
+                android:paddingLeft="0sp"
+                android:paddingTop="10dp"
+                android:paddingEnd="0sp"
+                android:paddingBottom="10dp"
+                android:text="@string/fifteen_year"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/emi_fifteen"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:maxWidth="95dp"
+                android:minWidth="95dp"
+                android:paddingStart="30dp"
+                android:paddingLeft="0sp"
+                android:paddingTop="10dp"
+                android:paddingEnd="0sp"
+                android:paddingBottom="10dp"
+                android:text="@string/default_value" />
+
+            <TextView
+                android:id="@+id/totalAmount_fifteen"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:maxWidth="145dp"
+                android:minWidth="145dp"
+                android:paddingStart="0sp"
+                android:paddingLeft="0sp"
+                android:paddingTop="10dp"
+                android:paddingEnd="0sp"
+                android:paddingBottom="0sp"
+                android:text="@string/default_value"
+                android:textAlignment="center" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/twenty_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:paddingStart="30dp"
+                android:paddingLeft="0sp"
+                android:paddingTop="10dp"
+                android:paddingEnd="0sp"
+                android:paddingBottom="10dp"
+                android:text="@string/twenty_year"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/emi_twenty"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:maxWidth="95dp"
+                android:minWidth="95dp"
+                android:paddingStart="30dp"
+                android:paddingLeft="0sp"
+                android:paddingTop="10dp"
+                android:paddingEnd="0sp"
+                android:paddingBottom="10dp"
+                android:text="@string/default_value" />
+
+            <TextView
+                android:id="@+id/totalAmount_twenty"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:maxWidth="145dp"
+                android:minWidth="145dp"
+                android:paddingStart="0sp"
+                android:paddingLeft="0sp"
+                android:paddingTop="10dp"
+                android:paddingEnd="0sp"
+                android:paddingBottom="0sp"
+                android:text="@string/default_value"
+                android:textAlignment="center" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/twentyfive_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:paddingStart="30dp"
+                android:paddingLeft="0sp"
+                android:paddingTop="10dp"
+                android:paddingEnd="0sp"
+                android:paddingBottom="10dp"
+                android:text="@string/twentyfive_year"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/emi_twentyfive"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:maxWidth="95dp"
+                android:minWidth="95dp"
+                android:paddingStart="30dp"
+                android:paddingLeft="0sp"
+                android:paddingTop="10dp"
+                android:paddingEnd="0sp"
+                android:paddingBottom="10dp"
+                android:text="@string/default_value" />
+
+            <TextView
+                android:id="@+id/totalAmount_twentyfive"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:maxWidth="145dp"
+                android:minWidth="145dp"
+                android:paddingStart="0sp"
+                android:paddingLeft="0sp"
+                android:paddingTop="10dp"
+                android:paddingEnd="0sp"
+                android:paddingBottom="0sp"
+                android:text="@string/default_value"
+                android:textAlignment="center" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/thirty_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:paddingStart="30dp"
+                android:paddingLeft="0sp"
+                android:paddingTop="10dp"
+                android:paddingEnd="0sp"
+                android:paddingBottom="10dp"
+                android:text="@string/thrity_year"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/emi_thirty"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:maxWidth="95dp"
+                android:minWidth="95dp"
+                android:paddingStart="30dp"
+                android:paddingLeft="0sp"
+                android:paddingTop="10dp"
+                android:paddingEnd="0sp"
+                android:paddingBottom="10dp"
+                android:text="@string/default_value" />
+
+            <TextView
+                android:id="@+id/totalAmount_thirty"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:maxWidth="145dp"
+                android:minWidth="145dp"
+                android:paddingStart="0sp"
+                android:paddingLeft="0sp"
+                android:paddingTop="10dp"
+                android:paddingEnd="0sp"
+                android:paddingBottom="0sp"
+                android:text="@string/default_value"
+                android:textAlignment="center" />
+        </TableRow>
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

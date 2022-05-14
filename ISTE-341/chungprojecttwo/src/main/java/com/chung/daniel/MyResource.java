@@ -1,7 +1,7 @@
 package com.chung.daniel;
-
 import java.io.Console;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -34,7 +34,8 @@ import companydata.*;
  */
 @Path("CompanyServices")
 public class MyResource {
-    public DataLayer dl; 
+    public DataLayer dl;
+    public BusinessLayer bs = new BusinessLayer();
 
     @Context
     UriInfo uriInfo;
@@ -54,43 +55,62 @@ public class MyResource {
     @Produces("application/json")
     public Response getDepartment(@DefaultValue("dec8768") @QueryParam("company") String companyName, @QueryParam("dept_id") int id){
         try{
-            dl = new DataLayer("dec8768");
+
+            ArrayList<String> strParams = new ArrayList<>();
+            strParams.add(companyName);
+            ArrayList<Integer> intParams = new ArrayList<>();
+            intParams.add(id);
+
+            if (bs.checkEmptyStrings(strParams) || bs.checkEmptyInts(intParams)){
+                return Response.status(Response.Status.BAD_REQUEST).entity("[{\"message:\" \"There are empty fields!\"}]").build();
+            }
+
+            dl = new DataLayer(companyName);
+
             Department department = dl.getDepartment(companyName, id);
             if (department != null){
                 String json = new Gson().toJson(department);
+                dl.close();
                 return Response.ok(json).build();
             }
             else{
+                dl.close();
                 return Response.status(Response.Status.NOT_FOUND).entity("[{\"message\": \"Department not found\"}]").build();
             }
         }
         catch(Exception e){
+            dl.close();
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity("[{\"error\":\"Exception from data layer\"}]").build();
         }
-        finally{
-            dl.close();
-        }
+ 
     }
 
     @Path("departments")
     @GET
     @Produces("application/json")
-    public Response getAllDepartments(@DefaultValue("dec8768") @QueryParam("company") String inCompany){
+    public Response getAllDepartments(@DefaultValue("dec8768") @QueryParam("company") String company){
         try{
+            ArrayList<String> strParams = new ArrayList<>();
+            strParams.add(company);
+
+            if (bs.checkEmptyStrings(strParams)){
+                return Response.status(Response.Status.BAD_REQUEST).entity("[{\"message:\" \"There are empty fields!\"}]").build();
+            }
+
             dl= new DataLayer("dec8768");
-            List<Department> departments = departments = dl.getAllDepartment(inCompany);
+            List<Department> departments = departments = dl.getAllDepartment(company);
             if (!departments.isEmpty()) {
                 String json = new Gson().toJson(departments);
+                dl.close();
                 return Response.ok(json).build();
             } else {
+                dl.close();
                 return Response.status(Response.Status.NOT_FOUND).entity("[{\"message\":\""+ "No departments found\"}]").build();
             }
         }
         catch(Exception e){
-            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity("[{\"error\":\"Exception from data layer\"}]").build();
-        }
-        finally {
             dl.close();
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity("[{\"error\":\"Exception from data layer\"}]").build();
         }
     }
 
@@ -100,6 +120,13 @@ public class MyResource {
     @Produces("application/json")
     public Response putDepartment(String body){
         try{
+            ArrayList<String> strParams = new ArrayList<>();
+            strParams.add(body);
+
+            if (bs.checkEmptyStrings(strParams)){
+                return Response.status(Response.Status.BAD_REQUEST).entity("[{\"message:\" \"There are empty fields!\"}]").build();
+            }
+
             dl = new DataLayer("dec8768");
             JsonElement jsonel = new Gson().fromJson(body, JsonElement.class);
             JsonObject json = jsonel.getAsJsonObject();
@@ -114,19 +141,20 @@ public class MyResource {
             Department res = dl.updateDepartment(department);
 
             if(res != null){
+                dl.close();
                 return Response.ok("[{\"message\": \"Department updated\"}]").build();
             }
             else{
+                dl.close();
                 return Response.status(Response.Status.NOT_MODIFIED).entity("[{\"message\": \"Department not updated\"}]").build();
             }
         }
         catch(Exception e){
             JsonObject json = new Gson().fromJson(body, JsonObject.class);
+            dl.close();
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(json.toString()).build();
         }
-        finally{
-            dl.close();
-        }
+ 
     }
 
     @Path("department")
@@ -135,7 +163,17 @@ public class MyResource {
     @Produces("application/json")
     public Response insertDepartment(@DefaultValue("dec8768") @FormParam("company") String company, @FormParam("dept_name") String name, @FormParam("dept_no") String number, @FormParam("location") String location){
         try{
-            dl = new DataLayer("dec8768");
+            ArrayList<String> strParams = new ArrayList<>();
+            strParams.add(company);
+            strParams.add(name);
+            strParams.add(number);
+            strParams.add(location);
+
+            if (bs.checkEmptyStrings(strParams)){
+                return Response.status(Response.Status.BAD_REQUEST).entity("[{\"message:\" \"There are empty fields!\"}]").build();
+            }
+
+            dl = new DataLayer(company);
             if(name.equals("") || number.equals("") || location.equals("")){
                 return Response.status(Response.Status.BAD_REQUEST).entity("[{\"message\":\"Empty form fields.\"}]").build();
             }
@@ -143,18 +181,19 @@ public class MyResource {
             Department inserted = dl.insertDepartment(department);
             System.out.println(department);
             if (inserted != null){
+                dl.close();
                 return Response.ok("[{message : department inserted!}]").build();
             }
             else{
+                dl.close();
                 return Response.status(Response.Status.EXPECTATION_FAILED).build();
             }
         }
         catch(Exception e){
+            dl.close();
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         }
-        finally{
-            dl.close();
-        }
+ 
     }
 
     @Path("department")
@@ -162,24 +201,34 @@ public class MyResource {
     @Produces("application/json")
     public Response deleteDepartment(@QueryParam("company") String company, @QueryParam("dept_id") int id){
         try{
-            dl = new DataLayer("dec8768");
+            ArrayList<String> strParams = new ArrayList<>();
+            strParams.add(company);
+            ArrayList<Integer> intParams = new ArrayList<>();
+            intParams.add(id);
+
+            if (bs.checkEmptyStrings(strParams) || bs.checkEmptyInts(intParams)){
+                return Response.status(Response.Status.BAD_REQUEST).entity("[{\"message:\" \"There are empty fields!\"}]").build();
+            }
+
+            dl = new DataLayer(company);
             if(company.equals("")){
                 return Response.status(Response.Status.BAD_REQUEST).entity("[{\"message\":\"Empty form fields.\"}]").build();
             }
             int res = dl.deleteDepartment(company, id);
             if (res > 0){
+                dl.close();
                 return Response.ok("[{message : Department deleted}]").build();
             }
             else{
+                dl.close();
                 return Response.status(Response.Status.NOT_MODIFIED).entity("[{\"message\": \"Department could not deleted\"}]").build();
             }
         }
         catch(Exception e){
+            dl.close();
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         }
-        finally{
-            dl.close();
-        }
+ 
     }
 
     @Path("employee")
@@ -187,22 +236,33 @@ public class MyResource {
     @Produces("application/json")
     public Response getEmployee(@QueryParam("company") String company, @QueryParam("emp_id") int id){
         try{
-            dl = new DataLayer("dec8768");
+
+            ArrayList<String> strParams = new ArrayList<>();
+            strParams.add(company);
+            ArrayList<Integer> intParams = new ArrayList<>();
+            intParams.add(id);
+
+            if (bs.checkEmptyStrings(strParams) || bs.checkEmptyInts(intParams)){
+                return Response.status(Response.Status.BAD_REQUEST).entity("[{\"message:\" \"There are empty fields!\"}]").build();
+            }
+
+            dl = new DataLayer(company);
             Employee employee = dl.getEmployee(id); 
             if (employee != null){
+                dl.close();
                 String json = new Gson().toJson(employee);
                 return Response.ok(json).build();
             } 
             else{
+                dl.close();
                 return Response.status(Response.Status.NOT_FOUND).entity("[{\"message\": \"Employee not found\"}]").build();
             }
         }
         catch(Exception e){
+            dl.close();
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         }
-        finally{
-            dl.close();
-        }
+ 
     }
 
     @Path("employees")
@@ -210,24 +270,29 @@ public class MyResource {
     @Produces("application/json")
     public Response getAllEmployees(@QueryParam("company") String company){
         try{
-            dl = new DataLayer("dec8768");
-            if (company.equals("")){
-                return Response.status(Response.Status.NOT_FOUND).build();
+            ArrayList<String> strParams = new ArrayList<>();
+            strParams.add(company);
+
+            if (bs.checkEmptyStrings(strParams)){
+                return Response.status(Response.Status.BAD_REQUEST).entity("[{\"message:\" \"There are empty fields!\"}]").build();
             }
+            dl = new DataLayer(company);
+
             List<Employee> employees = dl.getAllEmployee(company);
             if (!employees.isEmpty()) {
                 String json = new Gson().toJson(employees);
+                dl.close();
                 return Response.ok(json).build();
             } else {
+                dl.close();
                 return Response.status(Response.Status.NOT_FOUND).entity("[{\"message\":\""+ "No employees found\"}]").build();
             }
         }
         catch(Exception e){
+            dl.close();
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         }
-        finally{
-            dl.close();
-        }
+ 
     }
 
     @Path("employee")
@@ -236,11 +301,24 @@ public class MyResource {
     @Produces("application/json")
     public Response insertEmployee(@FormParam("company") String company, @FormParam("emp_name") String name, @FormParam("emp_no") String number, @FormParam("hire_date") String hired, @FormParam("job") String job, @FormParam("salary") Double salary, @FormParam("dept_id") int deptid, @FormParam("mng_id") int mngid){
         try{
-            dl = new DataLayer("dec8768");
-            Date currentDate = new Date();
-            if(name.isBlank() || number.isBlank() || company.isBlank() || hired.isBlank() || job.isBlank() || salary.isNaN()){
-                return Response.status(Response.Status.BAD_REQUEST).build();
+            ArrayList<String> strParams = new ArrayList<>();
+            strParams.add(company);
+            strParams.add(name);
+            strParams.add(number);
+            strParams.add(hired);
+            strParams.add(job);
+
+            ArrayList<Integer> intParams = new ArrayList<>();
+            intParams.add(deptid);
+            intParams.add(mngid);
+
+            if (bs.checkEmptyStrings(strParams) || bs.checkEmptyInts(intParams)){
+                return Response.status(Response.Status.BAD_REQUEST).entity("[{\"message:\" \"There are empty fields!\"}]").build();
             }
+
+            dl = new DataLayer(company);
+            Date currentDate = new Date();
+            
             java.sql.Date newDate = new java.sql.Date(new SimpleDateFormat("yyyy-MM-dd").parse(hired).getTime());
             if (!newDate.before(currentDate)){
                 return Response.status(Response.Status.BAD_REQUEST).build();
@@ -248,18 +326,19 @@ public class MyResource {
             Employee employee = new Employee(name, number, newDate, job, salary, deptid, mngid);
             Employee inserted = dl.insertEmployee(employee);
             if (inserted != null){
+                dl.close();
                 return Response.ok("[{\"success\":" + new Gson().toJson(inserted) + "}]").build();
             }
             else{
+                dl.close();
                 return Response.status(Response.Status.EXPECTATION_FAILED).entity("[{\"message\": \"couldn't insert employee\"}]").build();
             }
         }
         catch(Exception e){
+            dl.close();
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         }
-        finally{
-            dl.close();
-        }
+ 
     }
 
     @Path("employee")
@@ -269,6 +348,13 @@ public class MyResource {
     public Response updateEmployee(String body){
         System.out.println(body);
         try{
+            ArrayList<String> strParams = new ArrayList<>();
+            strParams.add(body);
+
+            if (bs.checkEmptyStrings(strParams)){
+                return Response.status(Response.Status.BAD_REQUEST).entity("[{\"message:\" \"There are empty fields!\"}]").build();
+            }
+
             dl = new DataLayer("dec8768");
             JsonElement jsonel = new Gson().fromJson(body, JsonElement.class);
             JsonObject json = jsonel.getAsJsonObject();
@@ -286,18 +372,19 @@ public class MyResource {
             if(res != null){
                 String resJson = new Gson().toJson(res);
                 String composed = "[{\"success\":" + resJson + "}]";
+                dl.close();
                 return Response.ok(composed).build();
             }
             else{
+                dl.close();
                 return Response.status(Response.Status.NOT_MODIFIED).entity("[{\"message\": \"could not update employee\"}]").build();
             }
         }
         catch(Exception e){
+            dl.close();
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         }
-        finally{
-            dl.close();
-        }
+ 
     }
 
     @Path("employee")
@@ -305,24 +392,34 @@ public class MyResource {
     @Produces("application/json")
     public Response delteEmployee(@QueryParam("company") String company, @QueryParam("emp_id") int id){
         try{
-            dl = new DataLayer("dec8768");
+            ArrayList<String> strParams = new ArrayList<>();
+            strParams.add(company);
+            ArrayList<Integer> intParams = new ArrayList<>();
+            intParams.add(id);
+
+            if (bs.checkEmptyStrings(strParams) || bs.checkEmptyInts(intParams)){
+                return Response.status(Response.Status.BAD_REQUEST).entity("[{\"message:\" \"There are empty fields!\"}]").build();
+            }
+
+            dl = new DataLayer(company);
             if (company.isBlank() || id == 0){
                 return Response.status(Response.Status.BAD_REQUEST).entity("[{\"message\": \"Empty fields\"}]").build();
             }
             int res = dl.deleteEmployee(id);
             if (res > 0){
+                dl.close();
                 return Response.ok("[{\"message\": \"Deleted employee\"}]").build();
             }
             else{
+                dl.close();;
                 return Response.status(Response.Status.EXPECTATION_FAILED).entity("[{\"message\" : \"Couldn't delete employee\"}]").build();
             }
         }
         catch(Exception e){
+            dl.close();
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         }
-        finally{
-            dl.close();
-        }
+ 
     }
 
     @Path("timecard")
@@ -330,24 +427,34 @@ public class MyResource {
     @Produces("application/json")
     public Response getTimecard(@QueryParam("company") String company, @QueryParam("timecard_id") int id){
         try{
-            dl = new DataLayer("dec8768");
+            ArrayList<String> strParams = new ArrayList<>();
+            strParams.add(company);
+            ArrayList<Integer> intParams = new ArrayList<>();
+            intParams.add(id);
+
+            if (bs.checkEmptyStrings(strParams) || bs.checkEmptyInts(intParams)){
+                return Response.status(Response.Status.BAD_REQUEST).entity("[{\"message:\" \"There are empty fields!\"}]").build();
+            }
+
+            dl = new DataLayer(company);
             if (company.isEmpty() || id == 0){
                 return Response.status(Response.Status.BAD_REQUEST).entity("[{\"message\": \"Empty fields\"}]").build();
             }
             Timecard timecard = dl.getTimecard(id);
             if (timecard != null){
+                dl.close();
                 return Response.ok(new Gson().toJson(timecard)).build();
             }
             else{
+                dl.close();
                 return Response.status(Response.Status.NOT_FOUND).entity("{[\"message\": \"Timecard not found\"]}").build();
             }
         }
         catch(Exception e){
+            dl.close();
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         }
-        finally{
-            dl.close();
-        }
+ 
     }
 
     @Path("timecards")
@@ -355,24 +462,33 @@ public class MyResource {
     @Produces("application/json")
     public Response getAllTimecards(@QueryParam("company") String company, @QueryParam("emp_id") int id){
         try{
-            dl = new DataLayer("dec8768");
+            ArrayList<String> strParams = new ArrayList<>();
+            strParams.add(company);
+            ArrayList<Integer> intParams = new ArrayList<>();
+            intParams.add(id);
+
+            if (bs.checkEmptyStrings(strParams) || bs.checkEmptyInts(intParams)){
+                return Response.status(Response.Status.BAD_REQUEST).entity("[{\"message:\" \"There are empty fields!\"}]").build();
+            }
+            dl = new DataLayer(company);
             if (company.isBlank() || id == 0){
                 return Response.status(Response.Status.BAD_REQUEST).entity("[{\"message\": \"Empty fields.\"}]").build();
             }
             List<Timecard> timecards = dl.getAllTimecard(id);
             if (!timecards.isEmpty()){
+                dl.close();
                 return Response.ok(new Gson().toJson(timecards)).build();
             }
             else{
+                dl.close();
                 return Response.status(Response.Status.NOT_FOUND).entity("[{\"message\": \"No timecards found.\"}]").build();
             }
         }
         catch(Exception e){
+            dl.close();
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         }
-        finally{
-            dl.close();
-        }
+ 
     }
 
     @Path("timecard")
@@ -381,7 +497,18 @@ public class MyResource {
     @Produces("application/json")
     public Response insertTimecard(@FormParam("company") String company, @FormParam("emp_id") int id, @FormParam("start_time") String startTime, @FormParam("end_time") String endTime){
         try{
-            dl = new DataLayer("dec8768");
+            ArrayList<String> strParams = new ArrayList<>();
+            strParams.add(company);
+            strParams.add(startTime);
+            strParams.add(endTime);
+            ArrayList<Integer> intParams = new ArrayList<>();
+            intParams.add(id);
+
+            if (bs.checkEmptyStrings(strParams) || bs.checkEmptyInts(intParams)){
+                return Response.status(Response.Status.BAD_REQUEST).entity("[{\"message:\" \"There are empty fields!\"}]").build();
+            }
+
+            dl = new DataLayer(company);
             java.sql.Timestamp newStartTime = new java.sql.Timestamp(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(startTime).getTime());
             java.sql.Timestamp newEndTime = new java.sql.Timestamp(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(endTime).getTime());
             Timecard timecard = new Timecard(newStartTime, newEndTime, id);
@@ -389,18 +516,19 @@ public class MyResource {
             Timecard res = dl.insertTimecard(timecard);
             if (res != null){
                 String strjson = new Gson().toJson(res);
+                dl.close();
                 return Response.ok("[{\"success\":" + strjson + "}]").build();
             }
             else{
+                dl.close();
                 return Response.status(Response.Status.EXPECTATION_FAILED).entity("[{\"message\":\"Couldn't insert timecard\"}]").build();
             }
         }
         catch(Exception e){
+            dl.close();
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         }
-        finally{
-            dl.close();
-        }
+ 
     }
 
     @Path("timecard")
@@ -409,6 +537,13 @@ public class MyResource {
     @Produces("application/json")
     public Response updateTimecard(String body){
         try{
+            ArrayList<String> strParams = new ArrayList<>();
+            strParams.add(body);
+
+            if (bs.checkEmptyStrings(strParams)){
+                return Response.status(Response.Status.BAD_REQUEST).entity("[{\"message:\" \"There are empty fields!\"}]").build();
+            }
+
             dl = new DataLayer("dec8768");
             JsonElement jsonel = new Gson().fromJson(body, JsonElement.class);
             JsonObject json = jsonel.getAsJsonObject();
@@ -422,18 +557,19 @@ public class MyResource {
             System.out.println(timecard);
             Timecard res = dl.updateTimecard(timecard);
             if (res != null){
+                dl.close();
                 return Response.ok(new Gson().toJson(timecard)).build();
             }
             else{
+                dl.close();
                 return Response.status(Response.Status.NOT_FOUND).entity("[{\"message\": \"Couldn't update timecard.\"}]").build();
             }
         }
         catch (Exception e){
+            dl.close();
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         }
-        finally{
-            dl.close();
-        }
+ 
     }
 
     @Path("timecard")
@@ -441,23 +577,31 @@ public class MyResource {
     @Produces("application/json")
     public Response deleteTimecard(@QueryParam("company") String company, @QueryParam("timecard_id") int id){
         try{
+            ArrayList<String> strParams = new ArrayList<>();
+            strParams.add(company);
+            ArrayList<Integer> intParams = new ArrayList<>();
+            intParams.add(id);
+
+            if (bs.checkEmptyStrings(strParams) || bs.checkEmptyInts(intParams)){
+                return Response.status(Response.Status.BAD_REQUEST).entity("[{\"message:\" \"There are empty fields!\"}]").build();
+            }
             dl = new DataLayer(company);
             int timecard = dl.deleteTimecard(id);
             if (timecard > 0){
+                dl.close();
                 return Response.ok(new Gson().toJson(timecard)).entity("[{\"message\": \"Timecard has been deleted.\"}]").build();
             }
             else{
+                dl.close();
                 return Response.status(Response.Status.NOT_FOUND).entity("[{\"message\": \"timecard not found.\"}]").build();
             }
         }
         catch( Exception e){
+            dl.close();
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         }
-        finally{
-            dl.close();
-        }
+ 
     }
-
 
 
     /**

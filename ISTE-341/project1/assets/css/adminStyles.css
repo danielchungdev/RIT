@@ -1,0 +1,41 @@
+.content{
+    max-width: 900px;
+    margin: auto;
+    margin-top: 3%;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+td, th {
+    border: 1px solid #000000;
+    text-align: left;
+    padding: 8px;
+}
+  
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.event{
+    background-color: goldenrod;
+    margin-bottom: 20px;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.session{
+    background-color: #dddddd;
+    margin-bottom: 20px;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.displaynone{
+    display: none;
+}

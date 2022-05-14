@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">League of Legends</string>
+    <string name="champion_1">Ashe</string>
+    <string name="champion_2">Draven</string>
+    <string name="champion_3">Ezreal</string>
+    <string name="champion_4">Jhin</string>
+    <string name="champion_5">Jinx</string>
+    <string name="champion_6">Sivir</string>
+    <string name="champion_7">Yasuo</string>
+    <string name="champion_8">Ahri</string>
+    <string name="champion_9">Dr. Mundo</string>
+    <string name="champion_10">Garen</string>
+    <string name="champion_11">Katarina</string>
+    <string name="champion_12">Shen</string>
+    <string name="champion_13">Volibear</string>
+    <string name="imageDesc">Image of a champion</string>
+    <string name="first_fragment">Welcome! Select a champion</string>
+</resources>

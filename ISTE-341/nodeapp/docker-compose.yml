@@ -1,0 +1,23 @@
+version: '3'
+services: 
+
+  mongo:
+    image: mongo
+    command: mongod
+    networks:
+      - all
+  
+  web: 
+    image: dec8768/dockerlab:dec
+    ports:
+      - "8080:3000"
+    depends_on:
+      - mongo
+    restart: always
+    networks: 
+      - all
+    environment: 
+      MONGODB_URI: "mongodb://mongo:27017/accounts"
+  
+networks:
+  all:

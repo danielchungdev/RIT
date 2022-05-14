@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "953167258238",
+    "project_id": "takeauction-ea158",
+    "storage_bucket": "takeauction-ea158.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:953167258238:android:9008bcf086190c97b52e2f",
+        "android_client_info": {
+          "package_name": "com.example.takeauction"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "953167258238-hu969il33vf67ngoo4gc96eepgnt1id4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgtEpQeQPuE_MgjGC6JAJsuDFu2AFj8BI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "953167258238-hu969il33vf67ngoo4gc96eepgnt1id4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

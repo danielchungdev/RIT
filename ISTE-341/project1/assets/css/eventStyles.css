@@ -1,0 +1,10 @@
+.content{
+    max-width: 900px;
+    margin: auto;
+    margin-top: 3%;
+}
+
+.content--cards{
+    display: flex;
+    flex-wrap: wrap;
+}
