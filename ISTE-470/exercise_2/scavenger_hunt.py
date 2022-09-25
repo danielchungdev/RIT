@@ -105,6 +105,99 @@ RA = np.array(RA_list)
 TL = np.array(TL_list[0])
 TR = np.array(TR_list[0])
 
-plot_waveforms(LA, RV, RA, TL, TR)
+# plot_waveforms(LA, RV, RA, TL, TR)
+
+def get_min_avg_max(data):
+    minimum = []
+    maximum = []
+    average = []
+    for waveform in data:
+        wavearray = np.array(waveform)
+        minimum.append(np.min(wavearray))
+        maximum.append(np.max(wavearray))
+        average.append(np.average(wavearray))
+    return np.array(minimum), np.array(average), np.array(maximum) 
+
+MLA, ALA, PLA = get_min_avg_max(LA)
+MRV, ARV, PRV = get_min_avg_max(RV)
+MRA, ARA, PRA = get_min_avg_max(RA)
+
+print("MLA: min = {}, max = {}, avg = {}".format(np.min(MLA), np.max(MLA), np.average(MLA)))
+print("ALA: min = {}, max = {}, avg = {}".format(np.min(ALA), np.max(ALA), np.average(ALA)))
+print("PLA: min = {}, max = {}, avg = {}\n".format(np.min(PLA), np.max(PLA), np.average(PLA)))
+
+print("MRV: min = {}, max = {}, avg = {}".format(np.min(MRV), np.max(MRV), np.average(MRV)))
+print("ARV: min = {}, max = {}, avg = {}".format(np.min(ARV), np.max(ARV), np.average(ARV)))
+print("PRV: min = {}, max = {}, avg = {}\n".format(np.min(PRV), np.max(PRV), np.average(PRV)))
+
+print("MRA: min = {}, max = {}, avg = {}".format(np.min(MRA), np.max(MRA), np.average(MRA)))
+print("ARA: min = {}, max = {}, avg = {}".format(np.min(ARA), np.max(ARA), np.average(ARA)))
+print("PRA: min = {}, max = {}, avg = {}\n".format(np.min(PRA), np.max(PRA), np.average(PRA)))
+
+os.makedirs('./step3', exist_ok=True)
+
+
+plt.plot(MLA)
+plt.title("Minimum Linear Acceleration")
+plt.ylabel('Linear Acceleration (g)')
+plt.xlabel('Instance')
+plt.savefig('./step3/Min_linear_acceleration.png')
+plt.close()
+
+plt.plot(ALA)
+plt.title("Average Linear Acceleration")
+plt.ylabel('Linear Acceleration (g)')
+plt.xlabel('Instance')
+plt.savefig('./step3/Average_linear_acceleration.png')
+plt.close()
+
+plt.plot(PLA)
+plt.title("Peak Linear Acceleration")
+plt.ylabel('Linear Acceleration (g)')
+plt.xlabel('Instance')
+plt.savefig('./step3/Peak_linear_acceleration.png')
+plt.close()
+
+plt.plot(MRV)
+plt.title("Minimum Rotational Velocity")
+plt.ylabel('Rotational Velocity (rad/sec)')
+plt.xlabel('Instance')
+plt.savefig('./step3/Min_rotational_velocity.png')
+plt.close()
+
+plt.plot(ARV)
+plt.title("Average Rotational Velocity")
+plt.ylabel('Rotational Velocity (rad/sec)')
+plt.xlabel('Instance')
+plt.savefig('./step3/Average_rotational_velocity.png')
+plt.close()
+
+plt.plot(PRV)
+plt.title("Peak Rotational Velocity")
+plt.ylabel('Rotational Velocity (rad/sec)')
+plt.xlabel('Instance')
+plt.savefig('./step3/Peak_rotational_velocity.png')
+plt.close()
+
+plt.plot(MRA)
+plt.title("Minimum Rotational Acceleration")
+plt.ylabel('Rotational Acceleration (rad/sec^2)')
+plt.xlabel('Instance')
+plt.savefig('./step3/Min_rotational_acceleration.png')
+plt.close()
+
+plt.plot(ARA)
+plt.title("Average Rotational Acceleration")
+plt.ylabel('Rotational Acceleration (rad/sec^2)')
+plt.xlabel('Instance')
+plt.savefig('./step3/Average_rotational_acceleration.png')
+plt.close()
+
+plt.plot(PRA)
+plt.title("Peak Rotational Acceleration")
+plt.ylabel('Rotational Acceleration (rad/sec^2)')
+plt.xlabel('Instance')
+plt.savefig('./step3/Peak_rotational_acceleration.png')
+plt.close()
 
 #Only 5 of them go over 100 in linear acceleration. 
