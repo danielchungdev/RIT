@@ -105,7 +105,7 @@ RA = np.array(RA_list)
 TL = np.array(TL_list[0])
 TR = np.array(TR_list[0])
 
-# plot_waveforms(LA, RV, RA, TL, TR)
+plot_waveforms(LA, RV, RA, TL, TR)
 
 def get_min_avg_max(data):
     minimum = []
@@ -136,7 +136,6 @@ print("PRA: min = {}, max = {}, avg = {}\n".format(np.min(PRA), np.max(PRA), np.
 
 os.makedirs('./step3', exist_ok=True)
 
-
 plt.plot(MLA)
 plt.title("Minimum Linear Acceleration")
 plt.ylabel('Linear Acceleration (g)')
@@ -146,6 +145,7 @@ plt.close()
 
 plt.plot(ALA)
 plt.title("Average Linear Acceleration")
+# plt.ylim([0, 160])
 plt.ylabel('Linear Acceleration (g)')
 plt.xlabel('Instance')
 plt.savefig('./step3/Average_linear_acceleration.png')
@@ -167,6 +167,7 @@ plt.close()
 
 plt.plot(ARV)
 plt.title("Average Rotational Velocity")
+# plt.ylim([0, 160])
 plt.ylabel('Rotational Velocity (rad/sec)')
 plt.xlabel('Instance')
 plt.savefig('./step3/Average_rotational_velocity.png')
@@ -174,6 +175,7 @@ plt.close()
 
 plt.plot(PRV)
 plt.title("Peak Rotational Velocity")
+# plt.ylim([0, 160])
 plt.ylabel('Rotational Velocity (rad/sec)')
 plt.xlabel('Instance')
 plt.savefig('./step3/Peak_rotational_velocity.png')
@@ -200,4 +202,25 @@ plt.xlabel('Instance')
 plt.savefig('./step3/Peak_rotational_acceleration.png')
 plt.close()
 
-#Only 5 of them go over 100 in linear acceleration. 
+os.makedirs('./comparing', exist_ok=True)
+
+plt.scatter(PLA, PRA)
+plt.ylabel("Rot Acceleration (rad/sec^2)")
+plt.xlabel("Linear Acceleration (g)")
+plt.title("PLA vs PRA")
+plt.savefig('./comparing/F1vsF2.png')
+plt.close()
+
+plt.scatter(PRV, PLA)
+plt.title("PRV vs PLA")
+plt.xlabel("Rotational Velocity (rad/sec)")
+plt.ylabel("Linear Acceleration (g)")
+plt.savefig('./comparing/F1vsF3.png')
+plt.close()
+
+plt.scatter(PRV, PRA)
+plt.title("PRV vs PRA")
+plt.xlabel("Rotational Velocity (rad/sec)")
+plt.ylabel("Rotational Acceleration (rad/sec^2)")
+plt.savefig('./comparing/F2vsF3.png')
+plt.close()
